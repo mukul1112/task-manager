@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Task Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple task management web application built with React. This app allows you to create, update, and delete tasks with editable fields for task title, description, priority, and status. It also includes validation for required fields and provides user feedback when interacting with tasks.
 
-## Available Scripts
+## Features
+- **Create Tasks**: Add a new task with a title, description, priority, and status.
+- **Update Tasks**: Modify task details such as title, description, priority, and status.
+- **Delete Tasks**: Remove tasks from the list.
+- **Field Validation**: Required fields (Title and Description) are validated before submission, with visual feedback (red border and error message).
+- **Responsive Design**: Works well on both desktop and mobile devices.
 
-In the project directory, you can run:
+## Technology Stack
+- **Frontend**: React.js
+- **Backend**: Express.js & Node.js
+- **Styling**: Tailwind CSS for modern, utility-first styling.
 
-### `npm start`
+## Demo
+To run a demo, clone this repository and set up the project as described below.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
+Make sure you have Node.js and npm installed. You can download them from [here](https://github.com/mukul112/task-manager.git).
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/mukul1112/task-manager.git
+   cd task-manager
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Set up the backend API (Optional):** The front-end code assumes an API is running at `http://localhost:5000/tasks`. You may need to set up a backend server (e.g., using Express.js) to handle tasks and store them in a database like MongoDB.
 
-### `npm run build`
+4. **Start the development server:**
+   ```bash
+   npm start
+   ```
+   This will start the React development server at `http://localhost:3000`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. **Access the app:** Open `http://localhost:3000` in your browser to see the task manager in action.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
+- **Add a Task**: Click on "Add Task", fill in the task details, and click the "Add Task" button.
+- **Edit Task**: To edit an existing task, click on the "Edit" button next to it. Update the title, description, priority, or status, and click the "Update Task" button.
+- **Delete Task**: To delete a task, click the "Delete" button next to it.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API Endpoints (for backend developers)
+If you're setting up the backend API, here are the required routes:
 
-### `npm run eject`
+- **GET `/tasks`** - Fetch all tasks.
+- **POST `/tasks`** - Create a new task (requires title, description, priority, and status).
+- **PUT `/tasks/:id`** - Update a task's title, description, priority, or status.
+- **DELETE `/tasks/:id`** - Delete a task by ID.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Example Response (GET `/tasks`):
+```json
+[
+  {
+    "_id": "1",
+    "title": "Task 1",
+    "description": "Task 1 description",
+    "priority": "High",
+    "status": "Pending"
+  },
+  {
+    "_id": "2",
+    "title": "Task 2",
+    "description": "Task 2 description",
+    "priority": "Medium",
+    "status": "In Progress"
+  }
+]
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Future Improvements
+- Add authentication and authorization.
+- Add due date and reminder functionality for tasks.
+- Implement user-specific task lists.
+- pagination according to status ,priority user
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgements
+- **React**: Frontend framework used to build the app.
+- **Tailwind CSS**: For utility-first styling of the UI.
+- **Express.js**: For creating the backend API (assumed, not included in the code).
